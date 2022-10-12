@@ -6,7 +6,7 @@
 /*   By: gissao-m <gissao-m@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 09:52:18 by gissao-m          #+#    #+#             */
-/*   Updated: 2022/10/07 10:47:43 by gissao-m         ###   ########.fr       */
+/*   Updated: 2022/10/11 11:42:52 by gissao-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ void	rotate_a(t_stack *stack)
 
 	top = stack->numbers[stack->top];
 	keep_top = stack->top;
-	while (top > 0)
+	while (keep_top > 0)
 	{
-		stack->numbers[top] = stack->numbers[top - 1];
-		top--;
+		stack->numbers[keep_top] = stack->numbers[keep_top - 1];
+		keep_top--;
 	}
-	stack->numbers = keep_top;
+	stack->numbers[0] = top;
 	write(1, "ra\n", 3);
 }
 
@@ -35,12 +35,12 @@ void	rotate_b(t_stack *stack)
 
 	top = stack->numbers[stack->top];
 	keep_top = stack->top;
-	while (top > 0)
+	while (keep_top > 0)
 	{
-		stack->numbers[top] = stack->numbers[top - 1];
-		top--;
+		stack->numbers[keep_top] = stack->numbers[keep_top - 1];
+		keep_top--;
 	}
-	stack->numbers = keep_top;
+	stack->numbers[0] = top;
 	write(1, "rb\n", 3);
 }
 

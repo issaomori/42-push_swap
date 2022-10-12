@@ -6,7 +6,7 @@
 /*   By: gissao-m <gissao-m@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 13:33:17 by gissao-m          #+#    #+#             */
-/*   Updated: 2022/10/07 10:51:21 by gissao-m         ###   ########.fr       */
+/*   Updated: 2022/10/10 16:49:23 by gissao-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ typedef struct	s_stack
 	int		size;
 }	t_stack;
 
-int	verification_args(int argc, char **argv);
+int		verification_args(int argc, char **argv);
 int		is_integer(char **argv);
 int		numeric_range(char **argv);
 int		numbers_duplicate(char **argv);
@@ -45,6 +45,12 @@ void	double_rotate(t_stack *stack);
 void    reverse_rotate_a(t_stack *stack);
 void    reverse_rotate_b(t_stack *stack);
 void    double_reverse_rotate(t_stack *stack);
-
+int		find_smaller_number(t_stack *stack);
+int		find_bigger_number(t_stack *stack);
+void	sort_three_numbers(t_stack *stack_a);
+void	small_sort(t_stack *stack_a, t_stack *stack_b);
+void	sort(t_stack *stack_a, t_stack *stack_b);
+void	simple_sort(t_stack *stack_a, t_stack*stack_b);
+long	ft_atol(const char *str);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: gissao-m <gissao-m@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 16:22:20 by gissao-m          #+#    #+#             */
-/*   Updated: 2022/10/07 09:25:14 by gissao-m         ###   ########.fr       */
+/*   Updated: 2022/10/10 17:14:00 by gissao-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ int	is_integer(char **argv)
 }
 
 int	numeric_range(char **argv)
+//o int max nao passa do inteiro maximo aceitavel, talvez fazer uma func que pegue os long.
 {
 	char	**stack;
 	int		i;
@@ -55,9 +56,9 @@ int	numeric_range(char **argv)
 	stack = argv;
 	while (stack[i])
 	{
-		if (ft_atoi(stack[i]) > INT_MAX || ft_atoi(stack[i]) < INT_MIN)
+		if (ft_atol(stack[i]) > INT_MAX || ft_atol(stack[i]) < INT_MIN)
 			return (0);	
-		i--;
+		i++;
 	}
 	return (1);
 }
@@ -90,10 +91,6 @@ int	numbers_duplicate(char **argv)
 //para fazer isso posso pensar em usar uma struct para salvar o conteudo conferido e assim conseguir passar para as minhas funcs.
 
 void	checker_position_numbers(int argc, char **argv)
-{
-	
-}
-void	three_numbers(char **argv)
 {
 	
 }

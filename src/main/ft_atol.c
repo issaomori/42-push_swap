@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gissao-m <gissao-m@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/02 16:56:36 by gissao-m          #+#    #+#             */
-/*   Updated: 2022/10/10 17:29:16 by gissao-m         ###   ########.fr       */
+/*   Created: 2022/10/10 16:40:56 by gissao-m          #+#    #+#             */
+/*   Updated: 2022/10/10 17:31:44 by gissao-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdio.h>
 
-int	ft_atoi(const char *str)
+static int	ft_isdigit(int i)
 {
-	int	result;
-	int	ch_sign;
-	int	count_size;
+	if (i >= 48 && i <= 57)
+		return (1);
+	return (0);
+}
+
+long	ft_atol(const char *str)
+{
+	long	result;
+	long    ch_sign;
+	long	count_size;
 
 	result = 0;
 	ch_sign = 1;
