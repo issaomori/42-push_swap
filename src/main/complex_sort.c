@@ -6,14 +6,12 @@
 /*   By: gissao-m <gissao-m@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 12:23:44 by gissao-m          #+#    #+#             */
-/*   Updated: 2022/10/14 15:50:07 by gissao-m         ###   ########.fr       */
+/*   Updated: 2022/10/14 16:02:49 by gissao-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-	//int i
-	//serve para eu encontrar a posição do numero passado.
 int	get_position_number(t_stack *stack, int number)
 {
 	int	i;

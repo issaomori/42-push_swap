@@ -6,15 +6,10 @@
 /*   By: gissao-m <gissao-m@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 16:22:20 by gissao-m          #+#    #+#             */
-/*   Updated: 2022/10/14 15:45:37 by gissao-m         ###   ########.fr       */
+/*   Updated: 2022/10/14 16:02:08 by gissao-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//A primeira parte que irei fazer do meu código será uma checagem de erro, 
-//quando o número não for inteiro, precisa dar erro. 
-//Quando o número for maior do que o maior numero inteiro permitido (2147483647)
-// ou maior do que o menor numero permitido (-2147483648). 
-//E quando houver duplicação de número no código.
 #include "push_swap.h"
 
 int	verification_args(char **argv)
@@ -48,8 +43,6 @@ int	is_integer(char **argv)
 	return (1);
 }
 
-//o int max nao passa do inteiro maximo aceitavel, 
-//talvez fazer uma func que pegue os long.
 int	numeric_range(char **argv)
 {
 	char	**stack;
@@ -65,7 +58,6 @@ int	numeric_range(char **argv)
 	}
 	return (1);
 }
-//posso ordenar e comparar o inteiro com o proximo
 
 int	numbers_duplicate(char **argv)
 {
@@ -90,7 +82,3 @@ int	numbers_duplicate(char **argv)
 	}
 	return (1);
 }
-//pensei em fazer algo que primeiro cheque a posicao dos numeros,
-// para depois eu comecar a trabalhar com a organizacao.
-//para fazer isso posso pensar em usar uma struct para salvar 
-//o conteudo conferido e assim conseguir passar para as minhas funcs.
