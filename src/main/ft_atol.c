@@ -6,7 +6,7 @@
 /*   By: gissao-m <gissao-m@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 16:40:56 by gissao-m          #+#    #+#             */
-/*   Updated: 2022/10/10 17:31:44 by gissao-m         ###   ########.fr       */
+/*   Updated: 2022/10/14 15:48:58 by gissao-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,14 @@ static int	ft_isdigit(int i)
 long	ft_atol(const char *str)
 {
 	long	result;
-	long    ch_sign;
+	long	ch_sign;
 	long	count_size;
 
 	result = 0;
 	ch_sign = 1;
 	count_size = 0;
-	while (str[count_size] && ((str[count_size] >= '\t' && str[count_size] <= '\r') || str[count_size] == ' '))
+	while (str[count_size] && ((str[count_size] >= '\t' && \
+	str[count_size] <= '\r') || str[count_size] == ' '))
 		count_size++;
 	if (str[count_size] == '-' || str[count_size] == '+')
 	{

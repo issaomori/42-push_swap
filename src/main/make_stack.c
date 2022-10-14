@@ -6,13 +6,13 @@
 /*   By: gissao-m <gissao-m@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 18:07:08 by gissao-m          #+#    #+#             */
-/*   Updated: 2022/10/10 17:31:47 by gissao-m         ###   ########.fr       */
+/*   Updated: 2022/10/14 15:58:41 by gissao-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack *make_stack(int total_size)
+t_stack	*make_stack(int total_size)
 {
 	t_stack	*stack;
 
@@ -22,22 +22,81 @@ t_stack *make_stack(int total_size)
 	stack->total_size = total_size;
 	stack->top = -1;
 	stack->numbers = ft_calloc(sizeof(int), stack->total_size);
+	stack->capacity = stack->total_size;
 	return (stack);
 }
 
-void	start_stack (char **argv, t_stack *stack)
+void	normalize(t_stack *stack_a)
 {
-	int 	i;
+	int	smaller;
+	int	top;
+
+	smaller = find_smaller_number(stack_a);
+	top = stack_a->top;
+	if (smaller < 0)
+		smaller *= -1;
+	while (top >= 0)
+	{
+		stack_a->numbers[top] += smaller + 1;
+		top--;
+	}
+}
+
+void	start_stack(char **argv, t_stack *stack)
+{
+	int		i;
 	int		j;
 
 	i = 1;
 	j = stack->total_size - 1;
-
-	while (j > - 1)
+	while (j > -1)
 	{
 		stack->numbers[j] = ft_atoi(argv[i]);
 		stack->top++;
 		i++;
 		j--;
 	}
+	normalize(stack);
+}
+
+int	*create_stack_aux(t_stack *stack)
+{
+	int	*stack_sorted;
+	int	i;
+
+	i = 0;
+	stack_sorted = malloc(sizeof(int) * stack->capacity);
+	while (i < stack->total_size)
+	{
+		stack_sorted[i] = stack->numbers[i];
+		i++;
+	}
+	return (stack_sorted);
+}
+
+int	*sort_stack_aux(t_stack *stack)
+{
+	int	i;
+	int	value;
+	int	aux;
+	int	*stack_sorted;
+
+	i = 0;
+	stack_sorted = create_stack_aux(stack);
+	while (i < stack->total_size)
+	{
+		value = i;
+		while (value < stack->total_size)
+		{
+			if (stack_sorted[i] > stack_sorted[value])
+			{
+				aux = stack_sorted[i];
+				stack_sorted[i] = stack_sorted[value];
+				stack_sorted[value] = aux;
+			}
+			value++;
+		}
+		i++;
+	}
+	return (stack_sorted);
 }

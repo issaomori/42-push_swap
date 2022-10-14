@@ -6,7 +6,7 @@
 #    By: gissao-m <gissao-m@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/05 11:27:31 by gissao-m          #+#    #+#              #
-#    Updated: 2022/10/10 16:50:13 by gissao-m         ###   ########.fr        #
+#    Updated: 2022/10/13 19:21:21 by gissao-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,6 +34,7 @@ SRC =	$(PATH_MAIN)main.c\
 		$(PATH_MAIN)swap.c\
 		$(PATH_MAIN)sort.c\
 		$(PATH_MAIN)simple_sort.c\
+		$(PATH_MAIN)complex_sort.c\
 		$(PATH_MAIN)ft_atol.c\
 
 OBJS = $(patsubst $(PATH_SRC)%.c, $(PATH_OBJS)%.o, $(SRC))

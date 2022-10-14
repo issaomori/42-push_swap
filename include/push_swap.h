@@ -6,7 +6,7 @@
 /*   By: gissao-m <gissao-m@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 13:33:17 by gissao-m          #+#    #+#             */
-/*   Updated: 2022/10/10 16:49:23 by gissao-m         ###   ########.fr       */
+/*   Updated: 2022/10/14 10:55:15 by gissao-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ typedef struct	s_stack
 	int		*numbers;
 	int		top;
 	int		total_size;
-	int		size;
+	int		capacity;
 }	t_stack;
 
-int		verification_args(int argc, char **argv);
+int		verification_args(char **argv);
 int		is_integer(char **argv);
 int		numeric_range(char **argv);
 int		numbers_duplicate(char **argv);
@@ -49,8 +49,15 @@ int		find_smaller_number(t_stack *stack);
 int		find_bigger_number(t_stack *stack);
 void	sort_three_numbers(t_stack *stack_a);
 void	small_sort(t_stack *stack_a, t_stack *stack_b);
-void	sort(t_stack *stack_a, t_stack *stack_b);
+void	push_swap(t_stack *stack_a, t_stack *stack_b);
 void	simple_sort(t_stack *stack_a, t_stack*stack_b);
 long	ft_atol(const char *str);
-
+void	complex_sort (t_stack *stack_a, t_stack *stack_b);
+int		get_position_number(t_stack *stack, int number);
+void    move_to_b(t_stack *stack_a, t_stack *stack_b, int fixed_number);
+void	move_to_a(t_stack *stack_a, t_stack *stack_b);
+void	sort(t_stack *stack_a, t_stack *stack_b, int *sorted, int magic);
+int		*create_stack_aux(t_stack *stack);
+int		*sort_stack_aux(t_stack *stack);
+void	normalize(t_stack *stack_a);
 #endif

@@ -6,7 +6,7 @@
 /*   By: gissao-m <gissao-m@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 10:57:29 by gissao-m          #+#    #+#             */
-/*   Updated: 2022/10/10 18:35:36 by gissao-m         ###   ########.fr       */
+/*   Updated: 2022/10/14 15:51:01 by gissao-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	sorted_stacks(t_stack *stack)
 {
-	int i;
+	int	i;
 
 	i = stack->top;
 	if (stack->top == -1)
@@ -24,12 +24,12 @@ int	sorted_stacks(t_stack *stack)
 		if (stack->numbers[i] < stack->numbers[i - 1])
 			i--;
 		else
-		return (0);
+			return (0);
 	}
 	return (1);
 }
 
-void	sort(t_stack *stack_a, t_stack *stack_b)
+void	push_swap(t_stack *stack_a, t_stack *stack_b)
 {
 	if (sorted_stacks(stack_a))
 		return ;
@@ -37,4 +37,6 @@ void	sort(t_stack *stack_a, t_stack *stack_b)
 		swap_a(stack_a);
 	else if (stack_a->total_size < 6)
 		simple_sort(stack_a, stack_b);
+	else
+		complex_sort(stack_a, stack_b);
 }
