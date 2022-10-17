@@ -6,7 +6,7 @@
 #    By: gissao-m <gissao-m@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/05 11:27:31 by gissao-m          #+#    #+#              #
-#    Updated: 2022/10/17 12:06:37 by gissao-m         ###   ########.fr        #
+#    Updated: 2022/10/17 15:30:24 by gissao-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,21 +22,24 @@ LIBFT = ./libft/libft.a
 PATH_SRC = ./src/
 PATH_LIBFT = $(PATH_INCLUDE)libft/
 PATH_MAIN = $(PATH_SRC)main/
+PATH_MOVEMENT = $(PATH_SRC)movement/
+PATH_SORT = $(PATH_SRC)sort/
+PATH_UTILS = $(PATH_SRC)utils/
 PATH_OBJS = ./objs/
 
 SRC =	$(PATH_MAIN)main.c\
-		$(PATH_MAIN)push.c\
-		$(PATH_MAIN)error.c\
-		$(PATH_MAIN)find.c\
-		$(PATH_MAIN)make_stack.c\
-		$(PATH_MAIN)rotate.c\
-		$(PATH_MAIN)reverse_rotate.c\
-		$(PATH_MAIN)swap.c\
-		$(PATH_MAIN)sort.c\
-		$(PATH_MAIN)simple_sort.c\
-		$(PATH_MAIN)complex_sort.c\
-		$(PATH_MAIN)ft_atol.c\
-		$(PATH_MAIN)free.c\
+		$(PATH_MOVEMENT)push.c\
+		$(PATH_MOVEMENT)rotate.c\
+		$(PATH_MOVEMENT)reverse_rotate.c\
+		$(PATH_MOVEMENT)swap.c\
+		$(PATH_SORT)sort.c\
+		$(PATH_SORT)simple_sort.c\
+		$(PATH_SORT)complex_sort.c\
+		$(PATH_UTILS)error.c\
+		$(PATH_UTILS)find.c\
+		$(PATH_UTILS)make_stack.c\
+		$(PATH_UTILS)ft_atol.c\
+		$(PATH_UTILS)free.c\
 
 OBJS = $(patsubst $(PATH_SRC)%.c, $(PATH_OBJS)%.o, $(SRC))
 
@@ -49,8 +52,9 @@ $(PATH_OBJS)%.o: $(PATH_SRC)%.c
 	@mkdir -p $(PATH_OBJS)
 	@mkdir -p $(PATH_OBJS)libft/
 	@mkdir -p $(PATH_OBJS)main/
-	@mkdir -p $(PATH_OBJS)paths/
-	@mkdir -p $(PATH_OBJS)process/
+	@mkdir -p $(PATH_OBJS)movement/
+	@mkdir -p $(PATH_OBJS)sort/
+	@mkdir -p $(PATH_OBJS)utils/
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(LIBFT):
