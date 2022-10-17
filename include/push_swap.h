@@ -6,7 +6,7 @@
 /*   By: gissao-m <gissao-m@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 13:33:17 by gissao-m          #+#    #+#             */
-/*   Updated: 2022/10/14 10:55:15 by gissao-m         ###   ########.fr       */
+/*   Updated: 2022/10/17 12:05:52 by gissao-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,4 +60,6 @@ void	sort(t_stack *stack_a, t_stack *stack_b, int *sorted, int magic);
 int		*create_stack_aux(t_stack *stack);
 int		*sort_stack_aux(t_stack *stack);
 void	normalize(t_stack *stack_a);
+void	free_code(t_stack *stack_a, t_stack *stack_b);
+
 #endif

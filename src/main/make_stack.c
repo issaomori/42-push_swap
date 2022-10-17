@@ -6,7 +6,7 @@
 /*   By: gissao-m <gissao-m@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 18:07:08 by gissao-m          #+#    #+#             */
-/*   Updated: 2022/10/14 15:58:41 by gissao-m         ###   ########.fr       */
+/*   Updated: 2022/10/17 12:37:15 by gissao-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int	*create_stack_aux(t_stack *stack)
 	int	i;
 
 	i = 0;
-	stack_sorted = malloc(sizeof(int) * stack->capacity);
+	stack_sorted = ft_calloc(sizeof(int), stack->capacity);
 	while (i < stack->total_size)
 	{
 		stack_sorted[i] = stack->numbers[i];
@@ -80,7 +80,6 @@ int	*sort_stack_aux(t_stack *stack)
 	int	value;
 	int	aux;
 	int	*stack_sorted;
-
 	i = 0;
 	stack_sorted = create_stack_aux(stack);
 	while (i < stack->total_size)
