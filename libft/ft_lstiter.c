@@ -6,7 +6,7 @@
 /*   By: gissao-m <gissao-m@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 09:54:24 by gissao-m          #+#    #+#             */
-/*   Updated: 2022/10/05 09:59:56 by gissao-m         ###   ########.fr       */
+/*   Updated: 2022/10/17 14:59:46 by gissao-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	if (!lst)
-		return;
+		return ;
 	while (lst->next != NULL)
 	{
 		f(lst->content);

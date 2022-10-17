@@ -6,7 +6,7 @@
 /*   By: gissao-m <gissao-m@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 10:00:25 by gissao-m          #+#    #+#             */
-/*   Updated: 2022/10/05 10:01:29 by gissao-m         ###   ########.fr       */
+/*   Updated: 2022/10/17 14:58:00 by gissao-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_lstsize(t_list *lst)
 {
-	t_list *i;
+	t_list	*i;
 	int		count;
-	
+
 	i = lst;
 	count = 0;
 	while (i != NULL)

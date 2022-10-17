@@ -6,7 +6,7 @@
 /*   By: gissao-m <gissao-m@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 18:07:08 by gissao-m          #+#    #+#             */
-/*   Updated: 2022/10/17 12:37:15 by gissao-m         ###   ########.fr       */
+/*   Updated: 2022/10/17 15:00:40 by gissao-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,7 @@ int	*sort_stack_aux(t_stack *stack)
 	int	value;
 	int	aux;
 	int	*stack_sorted;
+
 	i = 0;
 	stack_sorted = create_stack_aux(stack);
 	while (i < stack->total_size)

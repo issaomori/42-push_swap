@@ -6,7 +6,7 @@
 /*   By: gissao-m <gissao-m@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 16:56:36 by gissao-m          #+#    #+#             */
-/*   Updated: 2022/10/10 17:29:16 by gissao-m         ###   ########.fr       */
+/*   Updated: 2022/10/17 14:58:22 by gissao-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ int	ft_atoi(const char *str)
 	result = 0;
 	ch_sign = 1;
 	count_size = 0;
-	while (str[count_size] && ((str[count_size] >= '\t' && str[count_size] <= '\r') || str[count_size] == ' '))
+	while (str[count_size] && ((str[count_size] >= '\t' \
+	&& str[count_size] <= '\r') || str[count_size] == ' '))
 		count_size++;
 	if (str[count_size] == '-' || str[count_size] == '+')
 	{

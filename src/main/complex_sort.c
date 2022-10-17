@@ -6,23 +6,11 @@
 /*   By: gissao-m <gissao-m@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 12:23:44 by gissao-m          #+#    #+#             */
-/*   Updated: 2022/10/17 13:33:01 by gissao-m         ###   ########.fr       */
+/*   Updated: 2022/10/17 15:02:21 by gissao-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	ft_lenint(int *str)
-{
-	int	count_size;
-
-	count_size = 0;
-	if (str == NULL)
-		return (0);
-	while (str[count_size])
-		count_size++;
-	return (count_size);
-}
 
 int	get_position_number(t_stack *stack, int number)
 {
@@ -41,10 +29,6 @@ void	move_to_b(t_stack *stack_a, t_stack *stack_b, int fixed_number)
 
 	closer = stack_a->total_size / 2;
 	i = get_position_number(stack_a, fixed_number);
-	// while (i < 0 && i > -1 && fixed_number >= 0)
-	// {
-	// 	i = get_position_number(stack_a, --fixed_number);
-	// }
 	if (stack_a->numbers[stack_a->top] <= fixed_number)
 		push_b(stack_a, stack_b);
 	else if (closer > i)
@@ -74,7 +58,7 @@ void	sort(t_stack *stack_a, t_stack *stack_b, int *sorted, int magic)
 {
 	int	fixed_number;
 	int	i;
-	int divider;
+	int	divider;
 
 	i = stack_a->total_size;
 	divider = 0;

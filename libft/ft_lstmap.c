@@ -6,7 +6,7 @@
 /*   By: gissao-m <gissao-m@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 09:56:14 by gissao-m          #+#    #+#             */
-/*   Updated: 2022/10/05 09:59:42 by gissao-m         ###   ########.fr       */
+/*   Updated: 2022/10/17 14:57:14 by gissao-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list  *lst_new;
-	t_list  *aux;
+	t_list	*lst_new;
+	t_list	*aux;
 
 	lst_new = NULL;
 	if (!lst)
